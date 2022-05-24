@@ -1,0 +1,86 @@
+<!---Initialize Home Page--->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body style="background-color:powderblue;">
+        
+        <!---Initialize structure of Title and house picture--->
+        <div class = "title">
+             <center>
+            <h1>Employee Attrition Predictor</h1>
+
+             </center>
+         </div>
+        <!---Links/buttons to other websites--->
+
+        
+        <div class = "page">
+            <!---Containerize paragraph and form for styling--->
+            <div class = "container">
+                <div class = "intro">
+                    <b>
+                        
+                        <center><p style="color:red;">Note: Please Enter all the input values in textbox inorder to get predictions </p></center>
+                    </b>
+                </div>
+                <br>
+                <!---Initialize form structure and inputs, set method to "POST"--->
+                <form action = "{{url_for('predict')}}" method = "post" class = "info">
+                   <center><input type="text" id="gender" name="Gender of Employee" placeholder="Gender" required="required"/><span style="color:red"> * </span></center>
+                    <br>
+                    <br>
+                    <center><input type="text" id="unified_grade" name="Grade of Employee" placeholder="Grade" required="required"/><span style="color:red"> * </span></center>
+                    <br>
+                    <br>
+                    <center><input type="text" id="city" name="City " placeholder="City" required="required"/><span style="color:red"> * </span></center>
+                    <br>
+                    <br>
+                    <center><input type="text" id="sub_bu" name="Sub BU" placeholder="Sub BU"/><span style="color:red" required="required"> * </span></center>
+                    <br>
+                    <br>
+                    <center><input type="text" id="ijp_90_days" name="IJP" placeholder="IJP"/><span style="color:red" required="required"> * </span></center>
+                    <br>
+                    <br>
+                    <center><input type="text" id="Tenure" name="Tenure" placeholder="Tenure"/><span style="color:red" required="required"> * </span></center>
+                    <br>
+                    <br>
+                    <center><input type="text" id="bench_ageing" name="Bench Ageing" placeholder="Bench Ageing"/><span style="color:red" required="required"> * </span></center>
+                    <br>
+                    <br>
+                    <center><input type="text" id="marital_status" name="Status of marriage" placeholder="Marrital Status"/><span style="color:red" required="required"> * </span></center>
+                    <br>
+                    <br>
+                    <center><input type="text" id="education_score" name="Education Score" placeholder="Education Score"/><span style="color:red" required="required"> * </span></center>
+                    <br>
+                    <br>
+                    <center><input type="text" id="Leaves_takes_90 days" name="Leaves" placeholder="Leaves"/><span style="color:red" required="required"> * </span></center>                    
+                    <br>
+                    <br>
+                    <center><input type="text" id="months_since_last_Promotion" name="Promotion" placeholder="Promotion"/><span style="color:red" required="required"> * </span></center>
+                    <br>
+                    <br>
+                    <center><input type="text" id="Payposition_2021" name="Payposition_2021" placeholder="Payposition"/><span style="color:red" required="required"> * </span></center>
+                    <br>
+                    <br>
+                    <center><input type="text" id="tenure_in_capgemini_yr" name="Tenure in CG" placeholder="Tenure in CG"/><span style="color:red" required="required"> * </span></center>
+                    <br>
+                    <br>
+                    <center><input type="text" id="Average_Rating" name="Average Rating" placeholder="Average Rating"/><span style="color:red" required="required"> * </span></center>
+                    <br>
+                    <br>
+                    <center><input type="text" id="rating_diff" name="Rating Difference" placeholder="Rating Difference"/><span style="color:red" required="required"> * </span></center>
+                    <br>
+                    <center> <button type="submit" class="btn">Predict</button></center>
+                </form>
+                <br> 
+                <!---Set placeholder for prediction output--->
+                <div class ="pred">
+                   <center> <p class = "result"><b>{{ prediction_text }}</b></p></center>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+
